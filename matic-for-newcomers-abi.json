@@ -43,6 +43,11 @@
 				"internalType": "uint256",
 				"name": "minFREE",
 				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "donationMessage",
+				"type": "string"
 			}
 		],
 		"name": "donate",
@@ -74,6 +79,11 @@
 		"name": "dons",
 		"outputs": [
 			{
+				"internalType": "address",
+				"name": "from",
+				"type": "address"
+			},
+			{
 				"internalType": "uint256",
 				"name": "totalMatic",
 				"type": "uint256"
@@ -92,6 +102,11 @@
 				"internalType": "uint256",
 				"name": "minFREE",
 				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "donationMessage",
+				"type": "string"
 			}
 		],
 		"stateMutability": "view",
