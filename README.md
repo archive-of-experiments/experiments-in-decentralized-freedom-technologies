@@ -1,8 +1,11 @@
-# Education Incentives Experiments
-It seems valuable to support newcomers who found their first FreedomCash Wallet with some Matic so that they can execute their first transactions on Blockchains easily.  
+# Experiments
+It seems valuable to give some Matic to newcomers who found their first FreedomCash Wallet so that they can execute their first transactions on Blockchains easily.  
 
 During early phases of the Freedom Cash Project newcomers might receive such a Matic Donation by simply asking for it via [FriendsOfSatoshi](https://t.me/FriendsOfSatoshi_bot).  
-This means every Geo Cacher is invited to claim Matic for each Freedom Cash Wallet he has generated and funded or found. 
+This means every Geo Cacher is invited to claim Matic for each Freedom Cash Wallet he has generated and funded or found.   
+
+Early supporters of the Freedom Cash Project did a great job in supporting Geo Cachers especially those who turned out to be newcomers in decentralized freedom technologies.  
+To simplify the lives of such supporters we have deployed [this smart contract](https://polygonscan.com/address/0xEf27d7c277DbaB70cf5863787A54a67D10e843Da). We might not provide a dedicated visitor interface for this smart contract because early supporters can utilize a standard smart contract interface like [this one](https://polygonscan.com/address/0xEf27d7c277DbaB70cf5863787A54a67D10e843Da#writeContract).
 
 We invite people to explore and co-create architectures of freedom.  
 
