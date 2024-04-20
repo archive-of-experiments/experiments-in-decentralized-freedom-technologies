@@ -10,28 +10,35 @@
 // We open up spaces to explore and co-create architectures of freedom.
 
 pragma solidity 0.8.19;
+
 import "https://raw.githubusercontent.com/OpenZeppelin/openzeppelin-contracts/v4.9.4/contracts/token/ERC20/IERC20.sol";
 
 contract MaticForNewComers { 
 
     address public nativeFreedomCash = 0x1Dc4E031e7737455318C77f7515F8Ea8bE280a93;    
+
     uint256 public donationCounter;
+
     mapping(address => uint256) public maticReceived; 
     mapping(uint256 => IDonation) public dons; 
+
     error CheckInput();
     error CheckdID();
     error TransferOfMaticFailed();
+
     struct IDonation {
+        address from;
         uint256 totalMatic;
         uint256 distributedMatic;
         uint256 perClaimMaticAmount;
         uint256 minFREE;
+        string donationMessage;
     }
 
-    function donate(uint256 perClaimMaticAmount, uint256 minFREE) public payable {
+    function donate(uint256 perClaimMaticAmount, uint256 minFREE, string memory donationMessage) public payable {
         if (perClaimMaticAmount > 0 && msg.value > 0 && (msg.value % perClaimMaticAmount == 0)) {
             donationCounter++;
-            dons[donationCounter] = IDonation(msg.value, 0, perClaimMaticAmount, minFREE);
+            dons[donationCounter] = IDonation(msg.sender, msg.value, 0, perClaimMaticAmount, minFREE, donationMessage);
         } else {
             revert CheckInput();
         }
@@ -45,6 +52,7 @@ contract MaticForNewComers {
                     revert TransferOfMaticFailed(); 
                 }
                 maticReceived[receiver] = dons[dID].perClaimMaticAmount;
+                dons[dID].distributedMatic = dons[dID].distributedMatic + dons[dID].perClaimMaticAmount;
             } else {
                 revert CheckInput();
             }
@@ -60,4 +68,5 @@ contract MaticForNewComers {
     function getFREEBalanceOf(address walletAddress) public view returns(uint256)  {
         return IERC20(address(nativeFreedomCash)).balanceOf(address(walletAddress));
     }
+
 }
